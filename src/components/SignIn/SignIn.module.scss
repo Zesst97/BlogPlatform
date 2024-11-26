@@ -1,0 +1,84 @@
+.signin_form {
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        margin-top: 59px;
+        display: flex;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        max-width: 384px;
+        padding: 48px 33px;
+        border-radius: 6px;
+        box-shadow: 0px 22px 106px 0px #00000012;
+        min-width: 384px;
+    }
+
+    &__title {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 21px;
+    }
+
+    &__label {
+        margin-bottom: 6px;
+    }
+
+    &__message,
+    &__serverMessage {
+        font-size: 14px;
+        text-align: left;
+        color: #ff0000;
+        margin-top: -8px;
+        margin-bottom: 12px;
+    }
+
+    &__serverMessage {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3px;
+    }
+
+    &__input {
+        border: 1px solid #D9D9D9;
+        border-radius: 4px;
+        padding: 10px 12px;
+        margin-bottom: 12px;
+    }
+
+    &__submit_button {
+        background-color:#1890FF; 
+        border-radius: 4px;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #FFFFFF;
+        padding: 8px 0;
+        margin-bottom: 12px;
+    }
+    
+    &__signin_container {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__signin_text,
+    &__signin_link {
+        font-size: 12px;
+        text-align: center;
+        margin-right: 5px;
+    }
+
+    &__signin_link {
+        color: #1890FF;
+    }
+
+    &__signin_text {
+      color: #8C8C8C;
+      margin-right: 5px;
+    }
+
+    .input_error {
+        border: 1px solid #ff0000;
+    }
+}

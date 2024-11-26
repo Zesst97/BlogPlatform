@@ -1,0 +1,107 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+  
+    &__logo {
+        margin: 9px 0 15px 22px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #000000D9;
+    }
+
+    &__signIn,
+    &__signUp {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    &__signIn {
+        color: #000000D9;
+        margin-right: 19px;
+        &:hover {
+            color: #52C41A;
+        }
+    }
+  
+    &__signUp,
+    &__create
+     {
+        color: #52C41A;
+        border: 1px solid #52C41A;
+        border-radius: 5px;
+        padding: 6px 18px 10px 18px;
+        margin-right: 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        &:hover {
+            color: #FFFFFF;
+            background-color: #52C41A;
+        }
+    }
+
+    &__create {
+        padding: 8px 10px;
+        margin-right: 0;
+    }
+}
+
+.header__user_navigation {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.header__create {
+
+}
+
+.header__user_name {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    transition: text-decoration 0.3s ease, color 0.3s ease;
+    &:hover{
+        color:#52C41A
+    }
+}
+
+.header__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease, color 0.3s ease;
+    &:hover{
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
+    }
+}
+
+.header__Log_out {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-right: 20px;
+    color: #000000BF;
+    background-color: #fff;
+    border: 1px solid #000000BF;
+    border-radius: 5px;
+    padding: 6px 18px 10px 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover{
+        background-color: #9c9c9c;
+        border: 1px solid #9c9c9c;
+        color: #FFFFFF;
+}
+}
