@@ -37,10 +37,8 @@ function Header() {
       <Link to={NEW_ARTICLE} className={classes.header__create}>
         Create article
       </Link>
-      <Link to={PROFILE}>
+      <Link to={PROFILE} className={classes.user_info}>
         <div className={classes.header__user_name}>{user && user.username}</div>
-      </Link>
-      <Link to={PROFILE}>
         <img className={classes.header__avatar} src={user?.image ? user.image : avatar} alt="Avatar" />
       </Link>
       <button type="button" className={classes.header__Log_out} onClick={() => dispatch(handleLogOut)}>
