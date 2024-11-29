@@ -1,203 +1,210 @@
-.wrapper{
+.wrapper {
   display: flex;
   justify-content: center;
 }
 
 .card {
-    background-color: #fff;
-    max-width: 941px;
-    border-radius: 5px;
-    padding: 16px 15px;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 100px;
-    min-width: 800px;
-    min-height: 200px;
-  
-    &__content {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 15px;
-    }
-  
-    &__info {
-        max-width: 50rem;
-      .info_header {
-        display: flex;
-        margin-bottom: 10px;
-      }
-  
-      .info_title {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 28px;
-        text-align: left;
-        margin: 0 13px 0 0;
-        color: #1890ff;
-      }
-  
-      .info_likes {
-        margin-top: 7px;
-        margin-right: 10px;
-      }
-      
-      .info_tag_container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-right: 5px;
-      }
+  background-color: #fff;
+  max-width: 941px;
+  border-radius: 5px;
+  padding: 16px 15px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 100px;
+  min-width: 800px;
+  min-height: 200px;
 
-      .info_tags {
-        padding: 2px 6px;
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        border-radius: 3px;
-        font-family: Inter;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 15px;
-        text-align: left;
-      }
-    }
-  
-    &__user {
-      display: flex;
-      align-items:self-start;
-  
-      .user_userInfo {
-        margin-right: 12px;
-  
-        .user_userName,
-        .user_postDate {
-          font-weight: 400;
-          text-align: left;
-          line-height: 28px;
-        }
-  
-        .user_userName {
-          font-size: 18px;
-          color: rgba(0, 0, 0, 0.85);
-          white-space: nowrap;
-        }
-  
-        .user_postDate {
-          font-size: 12px;
-          line-height: 22px;
-          color: rgba(0, 0, 0, 0.5);
-          white-space: nowrap;
-        }
-      }
-    }
-  
-    &__avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-
-    &__description {
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 22px;
-      letter-spacing: 0;
-      text-align: left;
-      margin-bottom: 20px;
-    }
-
-    .card__body {
-      font-size: 15px;
-      h1 {
-        font-size: 25px;
-      }
-      
-      h2 {
-        font-size: 23px;
-      }
-      
-      h3 {
-        font-size: 21px;
-      }
-    
-      h4 {
-        font-size: 19px;
-      }
-    
-      h5 {
-        font-size: 17px;
-      }
-    
-      h6 {
-        font-size: 15px;
-      }
-
-      p {
-        margin-top: 0;
-        margin-bottom: 1em;
-      }
-      ul, ol {
-        padding-left: 2em;
-        margin-top: 0.5em;
-        margin-bottom: 1.2em;
-      }
-      a {
-        color: #1890ff;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-      code {
-        color: #d63384;
-        font-size: 14px;
-        background-color: #f8f8f8;
-        padding: 1px 3px;
-        border-radius: 3px;
-      }
-    }
-    
-    .likesContainer{
-      display: flex;
-      gap: 3px;
-      flex-wrap: nowrap;
-      margin-top: 7px;
-      margin-right: 50px;
-    }
-  }
-
-  .user_buttons {
-    margin-top: 30px;
-  }
-
-  .user_delete_button{
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0px;
-    text-align: left;
-    background-color: inherit;
-    border: 1px solid #F5222D;
-    padding: 6px 17px;
-    border-radius: 5px;
-    margin-right: 12px;
-  }
-
-  .user_edit_button{
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0px;
-    text-align: left;
-    background-color: inherit;
-    border: 1px solid #52C41A;
-    padding: 6px 19px 5px 19px;
-    border-radius: 5px;
-  }
-
-  .card__description_wrapper{
+  &__content {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 15px;
   }
 
-  .card_buttons {
-    display: flex;
-    align-items: flex-start;
+  &__info {
+    max-width: 50rem;
+    .info_header {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .info_title {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: left;
+      margin: 0 13px 0 0;
+      color: #1890ff;
+    }
+
+    .info_likes {
+      margin-top: 7px;
+      margin-right: 10px;
+    }
+
+    .info_tag_container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-right: 5px;
+    }
+
+    .info_tags {
+      padding: 2px 6px;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      border-radius: 3px;
+      font-family: Inter;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 15px;
+      text-align: left;
+    }
   }
+
+  &__user {
+    display: flex;
+    align-items: self-start;
+
+    .user_userInfo {
+      margin-right: 12px;
+
+      .user_userName,
+      .user_postDate {
+        font-weight: 400;
+        text-align: left;
+        line-height: 28px;
+      }
+
+      .user_userName {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.85);
+        white-space: nowrap;
+      }
+
+      .user_postDate {
+        font-size: 12px;
+        line-height: 22px;
+        color: rgba(0, 0, 0, 0.5);
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  &__description {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .card__body {
+    font-size: 15px;
+    h1 {
+      font-size: 25px;
+    }
+
+    h2 {
+      font-size: 23px;
+    }
+
+    h3 {
+      font-size: 21px;
+    }
+
+    h4 {
+      font-size: 19px;
+    }
+
+    h5 {
+      font-size: 17px;
+    }
+
+    h6 {
+      font-size: 15px;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+    ul,
+    ol {
+      padding-left: 2em;
+      margin-top: 0.5em;
+      margin-bottom: 1.2em;
+    }
+    a {
+      color: #1890ff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    code {
+      color: #d63384;
+      font-size: 14px;
+      background-color: #f8f8f8;
+      padding: 1px 3px;
+      border-radius: 3px;
+    }
+  }
+
+  .likesContainer {
+    display: flex;
+    gap: 3px;
+    flex-wrap: nowrap;
+    margin-top: 7px;
+    margin-right: 50px;
+  }
+}
+
+.user_buttons {
+  margin-top: 30px;
+}
+
+.user_delete_button {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+  background-color: inherit;
+  border: 1px solid #f5222d;
+  padding: 6px 17px;
+  border-radius: 5px;
+  margin-right: 12px;
+}
+
+.user_edit_button {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+  background-color: inherit;
+  border: 1px solid LimeGreen;
+  padding: 6px 19px 5px 19px;
+  border-radius: 5px;
+}
+
+.card__description_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_buttons {
+  display: flex;
+  align-items: flex-start;
+}
+
+.like_button {
+  border: none;
+  background: none;
+  outline: none;
+}
