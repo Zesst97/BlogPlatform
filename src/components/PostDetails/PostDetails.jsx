@@ -1,11 +1,11 @@
 import { Popconfirm, message } from 'antd';
 import { format, parse } from 'date-fns';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-import { useDeletePostMutation, useGetPostsBySlugQuery } from '../../api/api';
+import { useDeletePostMutation, useGetPostsBySlugQuery, useToggleFavoritedMutation } from '../../api/api';
 import defaultAvatar from '../../assets/images/avatar.png';
 import { ARTICLES } from '../../utils/routes/routesPath';
 import Error from '../Error';
@@ -17,17 +17,26 @@ function PostDetails() {
   const { slug } = useParams();
   const { data, isLoading, isError, error } = useGetPostsBySlugQuery(slug);
   const [deletePost, deleteResult] = useDeletePostMutation();
+  const [toggleFavorited, { isLoading: isToggling }] = useToggleFavoritedMutation();
   const userData = useSelector((state) => state.auth.user);
   const localToken = localStorage.getItem('token');
   const navigate = useNavigate();
+
+  const [isFavorited, setIsFavorited] = useState(data?.article?.favorited || false);
+  const [likesCount, setLikesCount] = useState(data?.article?.favoritesCount || 0);
+
+  useEffect(() => {
+    if (data?.article) {
+      setIsFavorited(data.article.favorited);
+      setLikesCount(data.article.favoritesCount);
+    }
+  }, [data]);
 
   useEffect(() => {
     if (deleteResult.isSuccess) {
       navigate(ARTICLES);
     }
   }, [deleteResult.isSuccess, navigate]);
-
-  const post = data?.article;
 
   if (isLoading) {
     return <Loading />;
@@ -37,9 +46,11 @@ function PostDetails() {
     return <Error error={error} />;
   }
 
-  if (!post) {
+  if (!data?.article) {
     return <p>Post Not Found</p>;
   }
+
+  const post = data.article;
 
   const formattedDate = post.createdAt
     ? format(parse(post.createdAt, "yyyy-MM-dd'T'HH:mm:ss.SSSX", new Date()), 'MMMM d, yyyy')
@@ -56,6 +67,18 @@ function PostDetails() {
   const markDownBody = post.body;
 
   const showController = post.author.username === userData?.username;
+
+  const handleLike = async () => {
+    if (!localToken) return;
+
+    try {
+      await toggleFavorited({ token: localToken, slug, favorited: !isFavorited }).unwrap();
+      setIsFavorited((prev) => !prev);
+      setLikesCount((prev) => (isFavorited ? prev - 1 : prev + 1));
+    } catch (err) {
+      console.error('Ошибка при переключении лайка:', err);
+    }
+  };
 
   const handleEditButton = () => {
     navigate(`/articles/${slug}/edit`);
@@ -83,6 +106,7 @@ function PostDetails() {
       </Link>
     </div>
   );
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.card}>
@@ -91,8 +115,16 @@ function PostDetails() {
             <div className={classes.info_header}>
               <h2 className={classes.info_title}>{post.title}</h2>
               <div className={classes.likesContainer}>
-                <div>🤍</div>
-                <div className={classes.info_likes_count}>{post.favoritesCount}</div>
+                <button
+                  className={classes.like_button}
+                  type="button"
+                  disabled={isToggling}
+                  onClick={handleLike}
+                  style={{ color: isFavorited ? 'red' : 'black' }}
+                >
+                  {isFavorited ? '❤️' : '🤍'}
+                </button>
+                <span className={classes.likes_count}>{likesCount}</span>
               </div>
             </div>
             <div className={classes.info_tag_container}>{tags}</div>
